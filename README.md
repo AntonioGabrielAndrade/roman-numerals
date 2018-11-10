@@ -1,36 +1,33 @@
-# roman-numerals
+# RomanNumerals-Kata
+The Romans were a clever bunch. They conquered most of
+Europe and ruled it for hundreds of years. They invented concrete and straight roads and even bikinis⁶⁰. One thing they never discovered though was the number zero. This made writing and dating extensive histories of their exploits slightly more challenging, but the system of numbers they came up with is still in use today. For example the BBC uses Roman numerals to date their programs.
+For this Kata, write a function to convert from normal (Arabic) numbers to Roman Numerals:
+1 -> I
+10 -> X
+7 -> VII
+etc.
 
-FIXME: description
+There is no need to be able to convert numbers larger than about 3000. (The Romans themselves didn’t tend to go any higher).
 
-## Installation
+Background information
 
-Download from http://example.com/FIXME.
+Symbol Value
+I 1
+V 5
+X 10
+L 50
+C 100
+D 500
+M 1000
 
-## Usage
+Generally, symbols are placed in order of value, starting with the largest values. When smaller values precede larger values, the smaller values are subtracted from the larger values, and the result is added to the total. However, you can’t write numerals like “IM” for 999, there are some additional rules:
 
-FIXME: explanation
+•         A number written in Arabic numerals can be broken into digits. For example, 1903 is composed of 1 (one thousand), 9 (nine hundreds), 0 (zero tens), and 3 (three units). To write the Roman numeral, each of the nonzero digits should be treated separately. In the above example, 1,000 = M, 900 = CM, and 3 = III. Therefore,
+•         1903 = MCMIII.
 
-    $ java -jar roman-numerals-0.1.0-standalone.jar [args]
+•         The symbols “I”, “X”, “C”, and “M” can be repeated three times in succession, but no more. (They may appear more than three times if they appear non-sequentially, such as XXXIX.) “D”, “L”, and “V” can never be repeated.
+•         “I” can be subtracted from “V” and “X” only. “X” can be subtracted from “L” and “C” only. “C” can be subtracted from “D” and “M” only. “V”, “L”, and “D” can never be subtracted.
+•         Only one small-value symbol may be subtracted from any large-value symbol.
 
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2018 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Part II
+Write a function to convert in the other direction, i.e. numeral to digit
